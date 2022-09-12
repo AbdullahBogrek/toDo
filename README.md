@@ -30,4 +30,8 @@ Mail: asbogrek@gmail.com
 
 ## License
 
+<<<<<<< HEAD
 This project is open source and available under the [MIT](https://opensource.org/licenses/MIT).
+=======
+This project is open source and available under the [MIT](https://opensource.org/licenses/MIT).
+>>>>>>> 3a1eff7a44f437001d1d3cf76d49ecfb0282fcb7
