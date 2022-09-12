@@ -23,15 +23,15 @@ export default function Login() {
       <>
         <Modal show={show} className="rounded-4 shadow" onHide={() => setShow(false)} centered size="md">
             <Modal.Header className="p-5 pb-4 border-bottom-0">
-                <h4 class="fw-bold mb-0">Welcome to toDo</h4>
+                <h4 className="fw-bold mb-0">Welcome to toDo</h4>
             </Modal.Header>
             <Modal.Body className="p-5 pt-0">
                 <form onSubmit={handleSubmit}>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="user" class="form-control rounded-3" id="floatingInput" placeholder="Abdullah" required/>
-                        <label for="floatingInput">Please enter a name</label>
+                    <div className="form-floating mb-3">
+                        <input type="text" name="user" className="form-control rounded-3" id="floatingInput" placeholder="Abdullah" required/>
+                        <label htmlFor="floatingInput">Please enter a name</label>
                     </div>
-                    <button class="w-100 mb-2 mt-3 btn btn-md rounded-3 btn-success" type="submit">Kaydet</button>
+                    <button className="w-100 mb-2 mt-3 btn btn-md rounded-3 btn-success" type="submit">Kaydet</button>
                 </form>
             </Modal.Body>
         </Modal>

@@ -8,28 +8,23 @@ import UpdateToDoModal from "./UpdateToDoModal";
 
 function List() { 
   const [isLoading, setIsLoading] = useState(false);
+  const [ isChecked, setIsChecked] = useState(false)
   const { darkTheme } = useTheme();
-  const { toDos, setToDos } = useForm();
+  const { todos, setTodos, isChanged } = useForm();
 
   useEffect(() => {
-    getToDos(localStorage.getItem("id")) 
-  }, [toDos])
+    getTodos(localStorage.getItem("id")) 
+  }, [isChanged])
 
-  const getToDos = async (id) => {
+  const getTodos = async (id) => {
     setIsLoading(true);
     await axios.get(`https://6319ae198e51a64d2be99876.mockapi.io/users/${String(id)}/todos`)
-      .then(res => setToDos(res.data))
+      .then(res => setTodos(res.data))
       .catch(err => console.log(err))
     setIsLoading(false);
   }
 
-  const putToDo = async (user_id, data) => {
-    await axios.put(`https://6319ae198e51a64d2be99876.mockapi.io/users/${String(user_id)}/todos`, data)
-    .then(res => console.log("To do successfully updated"))
-    .catch(err => console.log(err))
-  }
-
-  const updateToDoStatus = async (user_id, to_do_id, data) => {
+  const updateTodoStatus = async (user_id, to_do_id, data) => {
     await axios({
       method: "PUT",
       url: `https://6319ae198e51a64d2be99876.mockapi.io/users/${String(user_id)}/todos/${String(to_do_id)}`,
@@ -40,8 +35,8 @@ function List() {
   }
 
   const markCompleted = id => {
-    setToDos(
-      toDos.map(el =>
+    setTodos(
+      todos.map(el =>
         el.id === id ? { ...el, isCompleted: !el.isCompleted } : el  
       )
     )
@@ -52,16 +47,15 @@ function List() {
       <h5>Today</h5>
       <hr />
       { isLoading ? "Loading..." : (
-                toDos.map((toDo) => (
+                todos.map((toDo) => (
                   <div className="form-check d-flex align-items-center" key={toDo.id}>
                     <input
                       className="form-check-input me-3"
                       type="checkbox"
-                      onClick={() => {
+                      onChange={() => {
                         markCompleted(toDo.id)
-                        updateToDoStatus(toDo.userId, toDo.id, !toDo.isCompleted)
+                        updateTodoStatus(toDo.userId, toDo.id, !toDo.isCompleted)
                       }}
-                      value=""
                       id="flexCheckDefault"
                     />
                     <div

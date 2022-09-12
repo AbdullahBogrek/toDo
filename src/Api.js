@@ -12,7 +12,7 @@ export const postUser = async (user) => {
     .catch((e) => console.log(e));
 };
 
-export const putUser = async (user, id) => {
+export const updateUser = async (user, id) => {
   await axios({
     method: "PUT",
     url: `https://6319ae198e51a64d2be99876.mockapi.io/users/${String(id)}`,
@@ -34,16 +34,16 @@ export const putUser = async (user, id) => {
 //     .catch((e) => console.log(e));
 // };
 
-export const getToDos = async (id) => {
+// export const getTodos = async (id) => {
 
-  await axios.get(`https://6319ae198e51a64d2be99876.mockapi.io/users/${id}/todos`)
-    .then((res) => {
-      const allToDos = res.data
-    })
-    .catch((e) => console.log(e))
-}
+//   await axios.get(`https://6319ae198e51a64d2be99876.mockapi.io/users/${id}/todos`)
+//     .then((res) => {
+//       const allToDos = res.data
+//     })
+//     .catch((e) => console.log(e))
+// }
 
-export const postToDo = async (todo, id) => {
+export const postTodo = async (todo, id) => {
   await axios({
     method: "POST",
     url: `https://6319ae198e51a64d2be99876.mockapi.io/users/${id}/todos`,

@@ -12,8 +12,8 @@ function Container() {
 
   return (
     <div className={`app ${darkTheme ? "dark" : ""}`}>
-      <div className="container mt-5">
-        <div className='row'>
+      <div className="container pt-5">
+        <div className='row d-flex justify-content-center'>
           { !user ? <Login /> : (
             <>
               <Header />

@@ -6,7 +6,7 @@ import { useForm } from "../contexts/FormContext"
 
 export default function UpdateToDoModal({ toDo }) {
     const [show, setShow] = useState(false);
-    const { toDos, setToDos } = useForm();
+    const { setTodos, isChanged, setIsChanged } = useForm();
 
     const updateToDoData = async (user_id, to_do_id, data) => {
         await axios({
@@ -18,14 +18,22 @@ export default function UpdateToDoModal({ toDo }) {
         .catch(err => console.log(err))
     }
 
+    const fetchTodos = async (id) => {
+        await axios.get(`https://6319ae198e51a64d2be99876.mockapi.io/users/${String(id)}/todos`)
+        .then(res => setTodos(res.data))
+        .catch(err => console.log(err))
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         updateToDoData(toDo.userId, toDo.id, e.target.todo.value)
-        setToDos(
-            toDos.map(el =>
-              el.id === toDo.id ? { ...el, todo: e.target.todo.value } : el  
-            )
-        )
+        // setTodos(
+        //     todos.map(el =>
+        //       el.id === toDo.id ? { ...el, todo: e.target.todo.value } : el  
+        //     )
+        // )
+        fetchTodos(localStorage.getItem("id"))
+        setIsChanged(!isChanged)
         setShow(false)
     }
 

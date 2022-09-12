@@ -3,11 +3,14 @@ import { createContext, useContext, useState } from "react";
 const FormContext = createContext()
 
 export const FormProvider = ({ children }) => {
-    const [ toDos, setToDos ] = useState([])
+    const [ todos, setTodos ] = useState([])
+    const [ isChanged, setIsChanged ] = useState(false)
 
     const values = {
-        toDos,
-        setToDos
+        todos,
+        setTodos,
+        isChanged, 
+        setIsChanged
     }
 
     return <FormContext.Provider value={values}>{ children }</FormContext.Provider>
