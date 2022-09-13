@@ -7,9 +7,9 @@
 
 The API endpoint of the project is provided with MockAPI. The following is a diagram of the API endpoint. The to-do list was created, updated, deleted, and listed using this endpoint. Each user's to-do list is saved under their own API endpoint, and the name information obtained from the user is saved in local storage.
 
-<img src="./assets/toDo_schema.png" alt="Project show-off animation" width="50%"/>
-<img src="./assets/toDo_todo_json.png" alt="Project show-off animation" width="50%"/>
-<img src="./assets/toDo_user_json.png" alt="Project show-off animation" width="50%"/>
+<img src="assets/toDo_schema.PNG" alt="API schema" width="50%"/>
+<img src="assets/toDo_todo_json.PNG" alt="API todo schema" width="50%"/>
+<img src="assets/toDo_user_json.PNG" alt="API user schema" width="50%"/>
 
 ## Setup
 
