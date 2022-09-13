@@ -8,7 +8,7 @@ import { postTodo } from "../Api"
 function Form() {
   const { darkTheme } = useTheme()
   const [ todo, setTodo ] = useState("")
-  const { setTodos, isChanged, setIsChanged } = useForm();
+  const { todos, setTodos, isChanged, setIsChanged } = useForm();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,6 +23,11 @@ function Form() {
     .then(res => setTodos(res.data))
     .catch(err => console.log(err))
   }
+
+  // const handleChange = (e) => {
+  //   let selectedValue = e.target.value;
+  //   console.log(selectedValue)
+  // }
   
   return (
     <>
@@ -33,13 +38,13 @@ function Form() {
                 <input className={`form-control p-3 ${darkTheme ? "dark-input" : ""} shadow-lg`} onChange={(e) => setTodo(e.target.value)} value={todo} type="text" placeholder="Add a to do" minLength="3" required/>
                 <button className="btn btn-warning p-3 shadow-lg" type="submit" id="button-addon2">Add</button>
               </div>
-              <div className='col-md-2 filter'>
-                <select className={`form-select p-3 ${darkTheme ? "dark-input" : ""} shadow-lg`}>
+              {/* <div className='col-md-2 filter'>
+                <select className={`form-select p-3 ${darkTheme ? "dark-input" : ""} shadow-lg`} onChange={handleChange}>
                   <option value="all" defaultValue>All</option>
                   <option value="completed">Completed</option>
                   <option value="processing">Processing</option>
                 </select>
-              </div>
+              </div> */}
             </div>
           </form>
         </div>

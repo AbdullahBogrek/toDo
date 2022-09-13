@@ -8,7 +8,7 @@ import UpdateToDoModal from "./UpdateToDoModal";
 
 function List() { 
   const [isLoading, setIsLoading] = useState(false);
-  const [ isChecked, setIsChecked] = useState(false)
+  const [ isChecked, setIsChecked ] = useState(false)
   const { darkTheme } = useTheme();
   const { todos, setTodos, isChanged } = useForm();
 
@@ -41,7 +41,7 @@ function List() {
       )
     )
   }
-
+ 
   return (
     <div className="mt-2 mb-5 col-lg-10">
       <h5>Today</h5>
@@ -52,6 +52,7 @@ function List() {
                     <input
                       className="form-check-input me-3"
                       type="checkbox"
+                      checked={toDo.isCompleted}
                       onChange={() => {
                         markCompleted(toDo.id)
                         updateTodoStatus(toDo.userId, toDo.id, !toDo.isCompleted)
@@ -75,9 +76,9 @@ function List() {
                           ) : (
                             <>
                               <UpdateToDoModal toDo={toDo} />
-                              <DeleteModal toDo={toDo}/>
                             </>
                           )}
+                          <DeleteModal toDo={toDo}/>
                         </div>
                       </div>
                     </div>

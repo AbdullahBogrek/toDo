@@ -20,7 +20,9 @@ function Header() {
           <h5 className='greeting mt-3'>😉 Hello {user} <UpdateUserModal /></h5>
         </div>
         <div className="col-lg-10">
-            <p className='description'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+          <div className="col-lg-7">
+              <p className='description'>Plan your day by adding the tasks you have to complete today. You can change your list, add new tasks, or take off finished ones. Let's start.</p>
+          </div>
         </div>
     </>
   )
