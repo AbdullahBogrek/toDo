@@ -1,5 +1,5 @@
 # toDo
-<img src="./assets/toDo.gif" alt="Project show-off animation" width="100%"/>
+<img src="./assets/toDo.gif" alt="Project show-off animation" width="90%"/>
 
 ## Description 
 
