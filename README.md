@@ -1,5 +1,6 @@
 # toDo
-<img src="./assets/toDo.gif" alt="Project show-off animation" width="90%"/>
+
+https://user-images.githubusercontent.com/49994631/189996801-58a6b117-83b9-4b11-af7a-cee7fc4b6110.mp4
 
 ## Description 
 
